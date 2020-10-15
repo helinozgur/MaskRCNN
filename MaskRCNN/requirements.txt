@@ -11,3 +11,4 @@ opencv-python==4.4.0.44
 h5py==2.10.0
 imgaug==0.4.0
 ipython==7.16.1
+jupyter
