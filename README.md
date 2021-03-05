@@ -1,15 +1,39 @@
-# MaskRCNN
+# MaskRCNN ile Nesne Tanıma
 
 Mask R-CNN:
 
-Makine öğreniminde veya bilgisayarla görmede örnek bölümleme problemini çözmeyi amaçlayan derin bir sinir ağıdır.
-Başka bir deyişle, bir görüntü veya videodaki farklı nesneleri ayırabilir.
+Mask R-CNN, bilgisayarlı görüde nesneleri bölütlemek için kullanılan bir derin sinir
+ağıdır. İki aşaması vardır:
+1. Girdi görüntüsüne göre bir nesnenin olabileceği bölgeler hakkında tahminler
+üretir.
+2. Nesnenin sınıfını öngörür, sınırlayıcı kutuyu arıtır ve ilk aşama tahminine
+dayanarak nesnenin piksel düzeyinde bir maske oluşturur.
+Mask R-CNN temel olarak Faster R-CNN’in bir uzantısıdır. Faster R-CNN, nesne
+tanımada yaygın olarak kullanılır.
+Faster R-CNN, görüntülerden özellik haritaları çıkarmak için önce bir ConvNet
+kullanır. Bu özellik haritaları, daha sonra aday çerçeveleri döndüren bir Region
+Proposal Network(RPN)’den geçirilir. Daha sonra, tüm adayları aynı boyuta getirmek
+için bu aday sınırlayıcı çerçevelerine bir ROI pooling katmanı uygulanır. Son olarak
+öneriler, nesnelerin sınırlayıcı çerçevelerini sınıflandırmak ve çıktılamak için fully
+connected katmandan geçirilir.
+Aşağıdaki görseldeki gibi nesnenin orada olabileceği düşünülen bir sürü çerçeve
+oluşur.
 
-Faster R-CNN:
 
-Daha hızlı R-CNN, görüntü özelliklerini çıkarmak için bir CNN özellik çıkarıcı kullanır. 
-Ardından, ilgi alanları (ROI'ler) oluşturmak için bir CNN bölgesi teklif ağı kullanır. Bunları sabit boyuta dönüştürmek için RoI havuzlaması uyguluyoruz. 
-Daha sonra, sınıflandırma ve sınır kutusu tahmini yapmak için tamamen bağlantılı katmanlara beslenir.
+![1](https://user-images.githubusercontent.com/52162324/110106443-be001e80-7dba-11eb-84e9-5526a3fce1ec.PNG)
+
+
+Daha sonra, aynı sınıf için üst üste gelen kutuları gruplandırır ve yalnızca en yüksek
+tahmini seçer. Böylece, aynı nesne için kopyaları önler. Nihai olarak aşağıdaki gibi
+nesnelerimiz çerçeve içerisine alınır.
+
+
+![2](https://user-images.githubusercontent.com/52162324/110106509-d2441b80-7dba-11eb-992d-95e6596a08a0.PNG)
+
+
+Ve Mask R-CNN ile son halini almış olur
+
+![3](https://user-images.githubusercontent.com/52162324/110106572-e425be80-7dba-11eb-895c-f36508965c84.PNG)
 
 #### KAYNAKÇA:
 
