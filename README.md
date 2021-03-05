@@ -35,6 +35,13 @@ Ve Mask R-CNN ile son halini almış olur
 
 ![3](https://user-images.githubusercontent.com/52162324/110106572-e425be80-7dba-11eb-895c-f36508965c84.PNG)
 
+
+
+#### PROJE DEMO ÇIKTISI:
+
+![4](https://user-images.githubusercontent.com/52162324/110106822-336bef00-7dbb-11eb-83b1-8b80d2370491.PNG)
+
+
 #### KAYNAKÇA:
 
 https://medium.com/@kuza55/transparent-multi-gpu-training-on-tensorflow-with-keras-8b0016fd9012
